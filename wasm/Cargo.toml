@@ -1,7 +1,7 @@
 [package]
 name = "wasm"
 version = "0.1.0"
-edition = "2018"
+edition = "2021"
 
 [lib]
 crate-type = ["cdylib", "rlib"]
@@ -24,6 +24,13 @@ console_error_panic_hook = { version = "0.1.6", optional = true }
 #
 # Unfortunately, `wee_alloc` requires nightly Rust when targeting wasm for now.
 wee_alloc = { version = "0.4.5", optional = true }
+
+# KEEP MY LIB SQUEELING
+libsql-client = { version = "0.22.5", default-features = false, features = ["reqwest_backend"] }
+wasm-bindgen-futures = "0.4.34"
+url = "2.3.1"
+web-sys = { version = "0.3.61", features = ["console"] }
+reqwest-wasm = "0.11.16"
 
 [dev-dependencies]
 wasm-bindgen-test = "0.3.13"
